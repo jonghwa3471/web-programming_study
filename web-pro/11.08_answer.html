@@ -24,7 +24,17 @@
         <!-- 자바스크립트 함수 -->
         <!-- 자바스크립트에는 int라는 변수(?)가 없다 -->
         <script>
+            // 함수 선언 -- (선언적 함수)
+            // function 함수이름(){..}
+            /*
             function f(x) {
+                var res = x * x;
+                return res;
+            }
+            */
+            
+            // 익명함수 선언
+            var f = function f(x) {
                 var res = x * x;
                 return res;
             }
@@ -41,5 +51,20 @@
             document.write("<p> 결과는 " + s + "</P>");
         </script>
         <!-- 슬라이드 4장까지 작성해서 제출 -->
+
+        <hr>
+        <script>
+            // 객체 선언
+            var student = {
+                name: '종화',
+                sNumber: '20192862',
+                phoneNumber: '01027123471',
+                addr: '전라북도 군산시'
+            };
+
+            document.write(student['name']);
+            document.write("<br>");
+            document.write(student.sNumber);
+        </script>
     </body>
 </html>
