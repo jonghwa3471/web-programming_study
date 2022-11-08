@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        
+    </head>
+    <body>
+        <h3>11.03</h3>
+        <hr>
+        <script>
+            var str = 'apple';
+            str = 'hello'+ str;
+            //alert(str);
+            document.write("<p>" + str + "</p>");
+
+            var num = 10;
+
+            document.write('<p>짝수? 홀수?</p>')
+
+            var date = new Date();
+            var currentTime = date.getHours();
+            if ((6<=currentTime) && (currentTime<=18))
+                document.write(""); //해떴음
+            else
+                document.write(""); //해졌음
+
+            var ret = prompt("입력하세요", "");
+            if (ret == null) {
+                // 취소버튼 클릭했을 때
+                alert("취소버튼을 클릭");
+            } else if (ret == '') {
+                // 입력하지 않고 확인버튼 클릭했을 때
+                alert('입력하지 않고 클릭함');
+            } else {
+                if (!isNaN(ret)) {
+                    var testStr = Number(ret) + 1;
+                } else {
+                    var testStr = ret;
+                }
+                document.write("<p>" + testStr + "</p>");
+            }
+
+            var arr = [1458, '송종화'];
+            document.write('<p>' + arr + '</p>');
+            
+            for(var i=0; i<2; i++) {
+                document.write('<p>' + arr[i] + '</p>')
+            }
+            // 문자열을 숫자로 변환 --> 산술연산을 위해서
+           
+        </script>
+    </body>
+</html>

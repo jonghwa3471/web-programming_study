@@ -1,0 +1,12 @@
+body {
+    text-align: center;
+    margin-top: 250px;
+}
+
+h1 {
+    color: pink;
+}
+
+h1:hover {
+    color: teal;
+}
