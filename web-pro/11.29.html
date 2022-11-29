@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+        crossorigin="anonymous"></script>
+
+        <script>
+            $(document).ready(function() {
+                // 이벤트 연결
+                $('h3').mouseover(function() {
+                    // alert('제목 클릭');
+                    // CSS 변경
+                    $(this).css({
+                        background: 'red', color: 'white'
+                    });
+                });
+                $('h3').mouseleave(function() {
+                    $(this).css({
+                        background: '', color: ''
+                    });
+                });
+                // on() 이벤트 연결
+                $('#box')
+                .css({width: 100, height: 100, background: 'red'})
+                .on('click', function() { $(this).css('background', 'green');})
+                .on('mouseenter', function() { $(this).css('background', 'blue');})
+                .on('mouseleave', function() { $(this).css('background', 'red');});
+            
+                // 원래 처리되는 이벤트(기능)을 제거
+                $('a').click(function(event) {
+                    alert('A 태그를 클릭해도 넘어가지 않음');
+                    event.preventDefault();
+                });
+
+                // 버튼클릭 이벤트를 연결
+                $('button').click(function() {
+                    // 클릭했을 때 처리되는 내용
+                    $('.page').fadeToggle(1000);
+                });
+
+                $('#boxAni')
+                .css({width: 100, height: 100, background: 'magenta'})
+                .animate({width:300, opacity:0.5}, 500);
+            });
+        </script>
+    </head>
+    <body>
+        <h3>what is jQuery?</h3>
+        <hr>
+        <button>Toggle show the following sentences</button>
+        <p class="page">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dicta soluta suscipit mollitia dolores assumenda quibusdam laborum distinctio corrupti molestias. Necessitatibus asperiores a expedita dolorem commodi blanditiis suscipit est aspernatur!
+        </p>
+        <div id="box"></div>
+        <br><a href="http://www.naver.com">네이버</a>
+        <br><div id="boxAni"></div>
+    </body>
+</html>
