@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 이벤트 연결
+        window.onload = function() {
+            // 키보드 입력을 알아보려고
+            window.onkeydown = function(event) {
+                // alert(event.keyCode);
+                // 0(48) ~ 9(57), backspace(8)
+                // 이외의 키인을 받으면, 에러를 표시하세요
+            }
+
+            // 입력 양식 포커스 자동 설정
+            var input1 = document.querySelectorAll('input')[0];
+            var input2 = document.querySelectorAll('input')[1];      // input 태그 지정
+
+            // 앞의 input 태그에서 
+            input1.onkeydown = function() {
+
+            };
+            // 뒤의 input 태그에서
+            input2.onkeydown = function() {
+
+            };
+            // 이미지 애니메이션
+            var count = 0;
+            var image = document.getElementById('image');
+            var frames = ['0.png', '1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png', '10.png', '11.png', '12.png', '13.png', '14.png',];
+
+            // 타이머로 반복하면서 이미지 소스를 변경
+            setInterval(function() {
+                image.src = frames[count % frames.length];
+                count++;
+            }, 40);
+        };
+    </script>
+</head>
+<body>
+    주민번호를 입력하세요 :
+    <input type="text" maxlength="6">
+    <span>-</span>
+    <input type="text" maxlength="7">
+    <br>
+    <h3>Animation</h3>
+    <hr>
+    <img id="image">
+</body>
+</html>
